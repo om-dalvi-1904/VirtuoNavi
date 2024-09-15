@@ -6,7 +6,7 @@ import './FrontPage.css'; // Import your CSS file
 const Home = () => {
   return (
     <>
-      <section>
+      <section >
         <nav className="navbar">
           <input type="checkbox" id="check" />
           <label htmlFor="check" className="checkbtn">

@@ -92,7 +92,7 @@ const Login = ({ setUserDetails, setUserDocId }) => {
   };
 
   return (
-    <div>
+    <div className='body'>
       {!isLoggedIn ? (
         <>
           <h2>Login</h2>

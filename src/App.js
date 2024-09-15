@@ -4,20 +4,20 @@ import { auth } from './firebaseConfig';
 import Home from './Home';
 import Login from './components/Login/Login';
 import Signup from './components/Signup/Signup';
-import Admin from './components/Admin/Admin';
-import FrontPage from './components/FrontPage/FrontPage';
+import Admin from './components/Admin/Admin'; // Import your Admin component
+import FrontPage from './components/FrontPage/FrontPage'; // Import FrontPage component
 
 function App() {
-  const [userDetails, setUserDetails] = useState(null);
-  const [userDocId, setUserDocId] = useState(null);
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [userDetails, setUserDetails] = useState(null); // State to store user details
+  const [userDocId, setUserDocId] = useState(null); // State to store user document ID
+  const [isAuthenticated, setIsAuthenticated] = useState(false); // Track user authentication
 
   // Check user authentication status
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((user) => {
       if (user) {
         setIsAuthenticated(true);
-        // Fetch user details from Firebase if needed
+        // You can fetch user details from Firebase and set it here
         // setUserDetails({ name: user.displayName, email: user.email });
       } else {
         setIsAuthenticated(false);
@@ -32,7 +32,7 @@ function App() {
   return (
     <Router>
       <Routes>
-        {/* Redirect to FrontPage if user is authenticated */}
+        {/* FrontPage route */}
         <Route path="/" element={<FrontPage />} />
 
         {/* Redirect user to home if authenticated, otherwise show login */}
