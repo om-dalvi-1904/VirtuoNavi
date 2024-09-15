@@ -1,5 +1,5 @@
 import React from 'react';
-import './Home.css'; // Import your CSS file
+import './FrontPage.css'; // Import your CSS file
 
 
 
@@ -29,8 +29,8 @@ const Home = () => {
             <li id="bx">
               <a href="#"><i className='bx bxs-user'></i> ⮟</a>
               <ul className="dropdown">
-                <li><a href="#">User</a></li>
-                <li><a href="#">Admin</a></li>
+                <li><a href="/login">User</a></li>
+                <li><a href="/login">Admin</a></li>
               </ul>
             </li>
           </ul>
