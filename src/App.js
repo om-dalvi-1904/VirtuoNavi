@@ -4,21 +4,20 @@ import { auth } from './firebaseConfig';
 import Home from './Home';
 import Login from './components/Login/Login';
 import Signup from './components/Signup/Signup';
-import Admin from './components/Admin/Admin'; // Import your Admin component
+import Admin from './components/Admin/Admin';
 import FrontPage from './components/FrontPage/FrontPage';
 
-
 function App() {
-  const [userDetails, setUserDetails] = useState(null); // State to store user details
-  const [userDocId, setUserDocId] = useState(null); // State to store user document ID
-  const [isAuthenticated, setIsAuthenticated] = useState(false); // Track user authentication
+  const [userDetails, setUserDetails] = useState(null);
+  const [userDocId, setUserDocId] = useState(null);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   // Check user authentication status
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((user) => {
       if (user) {
         setIsAuthenticated(true);
-        // You can fetch user details from Firebase and set it here
+        // Fetch user details from Firebase if needed
         // setUserDetails({ name: user.displayName, email: user.email });
       } else {
         setIsAuthenticated(false);
@@ -31,15 +30,16 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
-      <FrontPage />
-      <Router>
+    <Router>
       <Routes>
+        {/* Redirect to FrontPage if user is authenticated */}
+        <Route path="/" element={<FrontPage />} />
+
         {/* Redirect user to home if authenticated, otherwise show login */}
         <Route path="/login" element={!isAuthenticated ? <Login setUserDetails={setUserDetails} setUserDocId={setUserDocId} /> : <Navigate to="/home" />} />
 
         {/* Redirect to signup if user wants to sign up */}
-        <Route path="/Signup" element={<Signup />} />
+        <Route path="/signup" element={<Signup />} />
 
         {/* Home route, accessible only if user is authenticated */}
         <Route path="/home" element={isAuthenticated ? <Home userDetails={userDetails} userDocId={userDocId} /> : <Navigate to="/login" />} />
@@ -48,8 +48,6 @@ function App() {
         <Route path="/admin" element={isAuthenticated ? <Admin userDetails={userDetails} userDocId={userDocId} /> : <Navigate to="/login" />} />
       </Routes>
     </Router>
-    </div>
-    
   );
 }
 
