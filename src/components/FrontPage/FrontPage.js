@@ -19,18 +19,18 @@ const Home = () => {
           <ul>
             <li><a className="active" href="/">Home</a></li>
             <li><a href="/about">About</a></li>
-            <li><a href="/References">References</a></li>
+            <li><a href="/References" target="_blank" rel="noopener noreferrer">References</a></li>
             <li><a href="Services">Services</a></li>
-            <li><a href="/contact">Contact</a></li>
+            <li><a href="#contact">Contact</a></li>
 
-            <li id="visible"><a href="/login">User</a></li>
-            <li id="visible"><a href="/login">Admin</a></li>
+            <li id="visible"><a href="/login" target="_blank" rel="noopener noreferrer">User</a></li>
+            <li id="visible"><a href="/login" target="_blank" rel="noopener noreferrer">Admin</a></li>
 
             <li id="bx">
               <a href="#"><i className='bx bxs-user'></i> ⮟</a>
               <ul className="dropdown">
-                <li><a href="/login">User</a></li>
-                <li><a href="/login">Admin</a></li>
+                <li><a href="/login" target="_blank" rel="noopener noreferrer">User</a></li>
+                <li><a href="/login"target="_blank" rel="noopener noreferrer">Admin</a></li>
               </ul>
             </li>
           </ul>
