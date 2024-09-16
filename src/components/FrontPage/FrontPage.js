@@ -17,14 +17,14 @@ const Home = () => {
             <img src="./images/logo.jpeg" alt="logo" className="logo-img" />
           </div>
           <ul>
-            <li><a className="active" href="#">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="https://pccoevirtualcampus.github.io/VirtuoNaviCitations/">References</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a className="active" href="/">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/References">References</a></li>
+            <li><a href="Services">Services</a></li>
+            <li><a href="/contact">Contact</a></li>
 
-            <li id="visible"><a href="#">User</a></li>
-            <li id="visible"><a href="#">Admin</a></li>
+            <li id="visible"><a href="/login">User</a></li>
+            <li id="visible"><a href="/login">Admin</a></li>
 
             <li id="bx">
               <a href="#"><i className='bx bxs-user'></i> ⮟</a>
@@ -123,12 +123,13 @@ const Home = () => {
               <a href="https://www.linkedin.com/in/riya-deshmukh-333r/" target="_blank" rel="noopener noreferrer">Riya Deshmukh</a>         
               <a href="https://www.linkedin.com/in/omdalvi19/" target="_blank" rel="noopener noreferrer">Om Dalvi</a>
               <a href="https://www.linkedin.com/in/pranita-daphal-18a4a9292/" target="_blank" rel="noopener noreferrer">Pranita Daphal</a>
-              <a href="https://www.linkedin.com/in/user2" target="_blank" rel="noopener noreferrer">Rajashree Gawai</a>
+              <a href="https://www.linkedin.com/in/rajshree-gawai-096419305/" target="_blank" rel="noopener noreferrer">Rajshree Gawai</a>
             </div>
 
             <div className="footer-contact">
               <h3>Get In Touch With Us</h3>
               <a href="https://www.pccoepune.com/" target="_blank" rel="noopener noreferrer">https://www.pccoepune.com/</a>
+              <p>E-mail :-virtuonavipccoe@gmail.com</p>
               <p>Phone: 020 2765 3168</p>
               <p>ADDRESS: MQ37+M3C, near Akurdi Railway Station Road, Sector No. 26, Pradhikaran, Nigdi, Pimpri, Maharashtra 411044</p>
             </div>

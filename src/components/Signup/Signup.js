@@ -3,7 +3,8 @@ import { auth, db } from '../../firebaseConfig';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { collection, addDoc } from 'firebase/firestore';
 import { useNavigate, Link } from 'react-router-dom';
-import './Signup.js'
+import 'bootstrap/dist/css/bootstrap.min.css'; // Import Bootstrap CSS
+import './Signup.css'
 const Signup = () => {
   const [formData, setFormData] = useState({ email: '', password: '', name: '' });
   const [signupError, setSignupError] = useState('');
@@ -44,46 +45,51 @@ const Signup = () => {
   };
 
   return (
-    <div className='body'>
-      <h2>Sign Up</h2>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="name">Name:</label>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            value={formData.name}
-            onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-            required
-          />
-        </div>
-        <div>
-          <label htmlFor="email">Email:</label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            value={formData.email}
-            onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-            required
-          />
-        </div>
-        <div>
-          <label htmlFor="password">Password:</label>
-          <input
-            type="password"
-            id="password"
-            name="password"
-            value={formData.password}
-            onChange={(e) => setFormData({ ...formData, password: e.target.value })}
-            required
-          />
-        </div>
-        {signupError && <p style={{ color: 'red' }}>{signupError}</p>}
-        <button type="submit">Sign Up</button>
-      </form>
-      <p>Already have an account? <Link to="/login">Login</Link></p>
+    <div className='d-flex justify-content-center align-items-center vh-100 signup-color'>
+      <div className='imageformcontainer  d-flex justify-content-center align-items-center vh-100'>
+      <img className='signuplogo' src='./images/Logo.svg' alt='Logo'></img> 
+      <div className='card p-4 shadow-sm' style={{ width: '100%', maxWidth: '400px' }}>
+        <h2 className='text-center mb-4'>Sign Up</h2>
+        <form className='signupform' onSubmit={handleSubmit}>
+          <div className='mb-3'>
+            <label htmlFor='name' className='form-label'>Name:</label>
+            <input
+              type='text'
+              id='name'
+              className='form-control'
+              value={formData.name}
+              onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+              required
+            />
+          </div>
+          <div className='mb-3'>
+            <label htmlFor='email' className='form-label'>Email:</label>
+            <input
+              type='email'
+              id='email'
+              className='form-control'
+              value={formData.email}
+              onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+              required
+            />
+          </div>
+          <div className='mb-3'>
+            <label htmlFor='password' className='form-label'>Password:</label>
+            <input
+              type='password'
+              id='password'
+              className='form-control'
+              value={formData.password}
+              onChange={(e) => setFormData({ ...formData, password: e.target.value })}
+              required
+            />
+          </div>
+          {signupError && <p className='text-danger text-center'>{signupError}</p>}
+          <button type='submit' className='btn btn-primary w-100'>Sign Up</button>
+        </form>
+        <p className='text-center mt-3'>Already have an account? <Link to='/login'>Login</Link></p>
+      </div>
+    </div> 
     </div>
   );
 };

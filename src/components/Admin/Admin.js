@@ -161,7 +161,7 @@ function Admin({ userDetails, userDocId }) {
     <div className="Admin">
       
       <h1>{editMode ? 'Edit Teacher Information' : 'Add Teacher Information'}</h1>
-      <form onSubmit={handleSubmit}>
+      <form  className="form"onSubmit={handleSubmit}>
         <div>
           <label>Teacher Name:</label>
           <input

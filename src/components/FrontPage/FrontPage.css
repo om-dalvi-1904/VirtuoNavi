@@ -46,6 +46,7 @@ nav ul li a {
     color: #fff;
     font-size: 17px;
     text-transform: uppercase;
+    text-decoration: none;
     padding: 7px 14px;
     border-radius: 3px;
     cursor: pointer;
@@ -84,6 +85,7 @@ ul li:hover ul.dropdown {
 nav ul li a:hover {
     background: #91a3f4;
     transition: 0.5s;
+    text-decoration: none;
 }
 
 .checkbtn {
@@ -227,7 +229,7 @@ nav ul li a:hover {
 
 .contact{
     background-color: rgb(222, 222, 218);
-    height: 550px;
+    height: 650px;
     font-family: 'Varela Round', sans-serif;
 }
 

@@ -95,22 +95,22 @@
   }
   
   /* Form Styles */
-  form {
+  .form {
     margin-bottom: 50px;
   }
   
-  form div {
+  .form div {
     margin-bottom: 25px;
   }
   
-  form label {
+  .form label {
     text-align: left;
     display: block;
     margin-bottom: 8px;
     font-weight: bold;
   }
   
-  form input {
+  .form input {
     width: 100%;
     padding: 10px;
     border: 1px solid #ccc;

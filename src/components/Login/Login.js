@@ -3,16 +3,15 @@ import { db, auth, provider } from '../../firebaseConfig';
 import { collection, getDocs, query, where } from 'firebase/firestore';
 import { Link, useNavigate } from 'react-router-dom';
 import { signInWithEmailAndPassword, signInWithPopup } from 'firebase/auth';
-import './Login.css'; 
-
+import 'bootstrap/dist/css/bootstrap.min.css'; // Import Bootstrap CSS
+import './Login.css'
 const Login = ({ setUserDetails, setUserDocId }) => {
   const [formData, setFormData] = useState({ email: '', password: '' });
-  const [greeting, setGreeting] = useState(''); 
-  const [isLoggedIn, setIsLoggedIn] = useState(false); 
+  const [greeting, setGreeting] = useState('');
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [loginError, setLoginError] = useState('');
   const navigate = useNavigate();
 
-  // Fetch user data and determine redirection
   const fetchUserData = useCallback(async (email) => {
     try {
       const adminRef = collection(db, 'admin');
@@ -29,14 +28,14 @@ const Login = ({ setUserDetails, setUserDocId }) => {
         setUserDocId(adminSnapshot.docs[0].id);
         setGreeting('Hey Admin!');
         setIsLoggedIn(true);
-        navigate('/admin'); 
+        navigate('/admin');
       } else if (!userSnapshot.empty) {
         const userData = userSnapshot.docs[0].data();
         setUserDetails(userData);
         setUserDocId(userSnapshot.docs[0].id);
         setGreeting('Hey User!');
         setIsLoggedIn(true);
-        navigate('/home'); 
+        navigate('/home');
       } else {
         setLoginError('No account found for this email.');
       }
@@ -92,46 +91,50 @@ const Login = ({ setUserDetails, setUserDocId }) => {
   };
 
   return (
-    <div className='body'>
-      {!isLoggedIn ? (
-        <>
-          <h2>Login</h2>
-          <form onSubmit={handleSubmit}>
-            <div>
-              <label htmlFor="email">Email:</label>
+    <div className='d-flex justify-content-center align-items-center vh-100 logincolor'>
+      {!isLoggedIn ? (   
+        <div className='imageformcontainer    d-flex justify-content-center align-items-center vh-100'>
+          <img className='loginlogo' src='./images/Logo.svg' alt='Logo'></img> 
+        <div className='card p-4 shadow-sm' style={{ width: '100%', maxWidth: '400px' }}>
+          <h2 className='text-center mb-4'>Login</h2>
+          <form className='loginform' onSubmit={handleSubmit}>
+            <div className='mb-3'>
+              <label htmlFor='email' className='form-label'>Email:</label>
               <input
-                type="email"
-                id="email"
-                name="email"
+                type='email'
+                id='email'
+                className='form-control'
                 value={formData.email}
                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                 required
               />
             </div>
-            <div>
-              <label htmlFor="password">Password:</label>
+            <div className='mb-3'>
+              <label htmlFor='password' className='form-label'>Password:</label>
               <input
-                type="password"
-                id="password"
-                name="password"
+                type='password'
+                id='password'
+                className='form-control'
                 value={formData.password}
                 onChange={(e) => setFormData({ ...formData, password: e.target.value })}
                 required
               />
             </div>
-            <button type="submit">Login</button>
-            {loginError && <p className="error">{loginError}</p>}
+            <button type='submit' className='btn btn-primary w-100 mb-2'>Login</button>
+            {loginError && <p className='text-danger text-center'>{loginError}</p>}
           </form>
-          <button onClick={signInWithGoogle}>Sign in with Google</button>
-          <p>Don't have an account? <Link to="/Signup">Sign up</Link></p>
-        </>
+          <button onClick={signInWithGoogle} className='btn btn-secondary w-100'>Sign in with Google</button>
+          <p className='text-center mt-3'>Don't have an account? <Link to='/Signup'>Sign up</Link></p>
+        </div>
+        </div>
       ) : (
-        <div>
+        <div className='text-center'>
           <h1>{greeting}</h1>
           <p>Redirecting you to your dashboard...</p>
         </div>
       )}
     </div>
+    
   );
 };
 
