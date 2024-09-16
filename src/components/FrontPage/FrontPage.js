@@ -30,7 +30,7 @@ const Home = () => {
               <a href="#"><i className='bx bxs-user'></i> ⮟</a>
               <ul className="dropdown">
                 <li><a href="/login" target="_blank" rel="noopener noreferrer">User</a></li>
-                <li><a href="/login"target="_blank" rel="noopener noreferrer">Admin</a></li>
+                <li><a href="/login" target="_blank" rel="noopener noreferrer">Admin</a></li>
               </ul>
             </li>
           </ul>

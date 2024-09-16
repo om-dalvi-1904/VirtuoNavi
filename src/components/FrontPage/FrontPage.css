@@ -20,6 +20,7 @@ body {
     left: 0; /* Ensures the navbar spans the entire width */
     z-index: 1000; /* Keeps the navbar on top of other elements */
     display: flex;
+    flex-wrap: nowrap;
     align-items: center;
     justify-content: space-between;
     padding: 0 20px;
@@ -85,7 +86,6 @@ ul li:hover ul.dropdown {
 nav ul li a:hover {
     background: #91a3f4;
     transition: 0.5s;
-    text-decoration: none;
 }
 
 .checkbtn {
@@ -378,7 +378,7 @@ footer a:hover {
 
 /* media query for other whole content */
 
-@media (max-width: 768px) {
+@media (max-width: 858px) {
     .navbar {
         display: flex;
         justify-content: space-between;
