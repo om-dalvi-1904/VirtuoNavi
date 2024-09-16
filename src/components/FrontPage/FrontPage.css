@@ -53,6 +53,10 @@ nav ul li a {
     cursor: pointer;
     display: block;
 }
+label.logo{
+    padding-top: 9px;
+
+}
 
 ul li ul.dropdown {
     position: absolute;
@@ -502,5 +506,9 @@ footer a:hover {
 
     .footer-logo img {
         height: 40px;
+    }
+
+    label.logo {
+        font-size: 30px;
     }
 }
