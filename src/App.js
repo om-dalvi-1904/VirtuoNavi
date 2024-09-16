@@ -7,6 +7,7 @@ import Signup from './components/Signup/Signup';
 import Admin from './components/Admin/Admin'; // Import your Admin component
 import FrontPage from './components/FrontPage/FrontPage'; // Import FrontPage component
 import References from './components/References/References';
+import Floor5 from './components/Building6/Floor5/Floor5';
 function App() {
   const [userDetails, setUserDetails] = useState(null); // State to store user details
   const [userDocId, setUserDocId] = useState(null); // State to store user document ID
@@ -47,6 +48,7 @@ function App() {
         {/* Admin route, accessible only if user is authenticated */}
         <Route path="/admin" element={isAuthenticated ? <Admin userDetails={userDetails} userDocId={userDocId} /> : <Navigate to="/login" />} />
         <Route path="/References" element={<References />} />
+        <Route path="/Floor5" element={<Floor5 />} />
       </Routes>
     </Router>
   );

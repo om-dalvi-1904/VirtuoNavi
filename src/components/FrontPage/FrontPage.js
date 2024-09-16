@@ -1,5 +1,6 @@
 import React from 'react';
 import './FrontPage.css'; // Import your CSS file
+import { Link } from 'react-router-dom';
 
 
 
@@ -30,7 +31,7 @@ const Home = () => {
               <a href="#"><i className='bx bxs-user'></i> ⮟</a>
               <ul className="dropdown">
                 <li><a href="/login" target="_blank" rel="noopener noreferrer">User</a></li>
-                <li><a href="/login" target="_blank" rel="noopener noreferrer">Admin</a></li>
+                <li><a href="/login">Admin</a></li>
               </ul>
             </li>
           </ul>
@@ -41,7 +42,9 @@ const Home = () => {
         <div className="Section-top back">
           <div className="con">
             <h2 className="text-big">Tired of Error 404 Classroom NOT FOUND !!!</h2>
+            <Link to="/Floor5" className="bt-link">
             <button className="bt">Xplore Campus</button>
+          </Link>
           </div>
         </div>
       </section>
