@@ -4,6 +4,7 @@
   }
 
 
+
   .body {
     display: flex;
     justify-content: center;
@@ -16,6 +17,13 @@
     justify-content: center;
     align-items: center;
   }
+
+.floorplan{
+  display: flex;
+  flex-direction: column;
+}
+
+
   /* Media query for devices with max width of 600px (standard phones) */
   @media only screen and (max-width: 600px) {
     object {
@@ -43,3 +51,4 @@
   .popup-header .close {
     cursor: pointer;
   }
+
