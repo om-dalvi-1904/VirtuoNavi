@@ -32,6 +32,12 @@
       width: 100vw; /* Set width to the device's full width */
       height: 75vw; /* Set height to 75% of the device width */
     }
+     h1 {
+    font-size: 1rem; /* Further reduce heading font sizes */
+  }
+  h2 {
+    font-size: 0.9rem;
+  }
   }
   #popup {
     display: none;

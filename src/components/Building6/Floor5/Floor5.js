@@ -63,7 +63,7 @@ const Floor5 = () => {
       
       <div className='floorplan'>
         <h1>Welcome To Virtual Campus </h1>
-        <h2>Here's the 5th Floor of our building</h2>
+        <h2>Here's the 5th Floor of our Building</h2>
         <object
           id="svgObject"
           type="image/svg+xml"
