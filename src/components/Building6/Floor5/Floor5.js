@@ -62,8 +62,8 @@ const Floor5 = () => {
       />
       
       <div className='floorplan'>
-        <h1>Welcome To Virtual Campus </h1>
-        <h2>Here's the 5th Floor of our Building</h2>
+        <h1 className='h1'>Welcome To Virtual Campus </h1>
+        <h2 className='h2'>Here's the 5th Floor of our Building</h2>
         <object
           id="svgObject"
           type="image/svg+xml"
