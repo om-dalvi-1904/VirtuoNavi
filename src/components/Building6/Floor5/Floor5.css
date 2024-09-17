@@ -22,16 +22,28 @@
 .floorplan{
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .h2 {
-  
   padding-bottom: 50px;
 }
+
+.fptitles{
+  display: flex;
+  flex-flow: column wrap;
+  gap:10px;
+}
+
   /* Media query for devices with max width of 600px (standard phones) */
   @media only screen and (max-width: 600px) {
+    .floorplan {
+      
+      flex-direction: column wrap;
+    }
     .body{
-      margin-top:55px;
+      margin: 500px;
     }
     object {
       transform: rotate(90deg);
@@ -39,9 +51,12 @@
       width: 100vw; /* Set width to the device's full width */
       height: 75vw; /* Set height to 75% of the device width */
     }
-     h1 {
-    font-size: 1rem; /* Further reduce heading font sizes */
-  }
+    .fptitles{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+     
   h2 {
     font-size: 0.9rem;
   }
@@ -65,3 +80,22 @@
     cursor: pointer;
   }
 
+  @media only screen and (max-width: 400px) {
+    .floorplan {
+      
+      flex-direction: column wrap;
+    }
+    .body{
+      margin:55px;
+    }
+    object {
+      transform: rotate(90deg);
+      margin-top: 250px;
+      margin-left: 160px;
+      width: 65vw; /* Set width to the device's full width */
+      height: 35vh; /* Set height to 75% of the device width */
+
+    }
+    
+  }
+  
