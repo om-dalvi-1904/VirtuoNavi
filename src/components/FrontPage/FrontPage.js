@@ -114,8 +114,11 @@ const Home = () => {
           <div className="footer-content" id="foot">
             <div className="footer-section">
               <h3>Get in Touch</h3>
-              <a href="https://www.instagram.com/yourusername" target="_blank" rel="noopener noreferrer">Instagram</a>
+              <a href="https://www.instagram.com/pccoe_virtuonavi?igsh=bDQ3ZmltM203cWk2" target="_blank" rel="noopener noreferrer">Instagram</a>
               <a href="https://www.twitter.com/yourusername" target="_blank" rel="noopener noreferrer">Twitter</a>
+              <a title="free web counter">
+                <img src='https://counter6.optistats.ovh/private/freecounterstat.php?c=puca95t5qr25jhxqx4jy5usepg2ygyxf' border='0' title="free web counter" alt="free web counter"/>
+              </a>
             </div>
 
             <div className="footer-section">

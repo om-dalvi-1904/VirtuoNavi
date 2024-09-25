@@ -520,3 +520,8 @@ footer a:hover {
         font-size: 25px;
     }
 }
+
+.footer-section a img{
+    width: 80px;
+    height: 20px;
+}
